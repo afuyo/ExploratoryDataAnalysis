@@ -1,0 +1,5 @@
+source("loadData.r")
+df<-aggregate(Emissions ~year,NEI,sum)
+plot(df$year,df$Emissions, type="l", main="Total Emissions in United States", xlab="Year", ylab="Emissions(in tons)")
+dev.copy(png,"plot1.png")
+dev.off()
