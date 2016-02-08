@@ -1,0 +1,5 @@
+source("loadData.r")
+df<-aggregate(Emissions ~year,data=subset(NEI,NEI$fips=="24510"),sum)
+plot(df$year,df$Emissions, type="l", main="Total Emissions in Baltimore City", xlab="Year", ylab="Emissions(in tons)")
+dev.copy(png,"plot2.png")
+dev.off()

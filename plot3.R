@@ -1,0 +1,5 @@
+library(ggplot2)
+source("loadData.r")
+df<-aggregate(Emissions ~ year + type, data=subset(NEI,fips=="24510"), sum)
+plot3<-qplot(year,Emissions,data=df,color=type,geom="path",xlab="Year",ylab="Emissions (in tons)",main="Emissions by type in Baltimore City")
+ggsave(plot=plot3,file="plot3.png",width = 4,height = 4)
